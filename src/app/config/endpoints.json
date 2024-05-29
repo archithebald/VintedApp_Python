@@ -1,0 +1,19 @@
+{
+  "BASE_URL": "https://www.vinted.fr/api/v2",
+  "endpoints": {
+    "search": {
+      "value": "/catalog/items",
+      "params": {
+        "page": null,
+        "perPage": null,
+        "search_text": null,
+        "catalog_ids": null,
+        "size_ids": null,
+        "brand_ids": null,
+        "status_ids": null,
+        "color_ids": null,
+        "material_ids": null
+      }
+    }
+  }
+}

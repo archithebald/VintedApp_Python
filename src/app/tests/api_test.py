@@ -1,5 +1,5 @@
 from utils import cookies
-from api import search
+from app.api.search import search
 
 auth = cookies.load_auth_cookie()
 

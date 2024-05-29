@@ -1,5 +1,5 @@
 from utils import config_functions, cookies
-from api import search
+from api.items import search, similar_items
 
 class Vinted:
     def __init__(self):
@@ -8,5 +8,10 @@ class Vinted:
         
     def search_items(self, **kwargs):
         data = search(self.cookies, kwargs=kwargs)
+        
+        return data["items"]
+    
+    def similar_items(self, item_id):
+        data = similar_items(self.cookies, item_id=item_id)
         
         return data["items"]

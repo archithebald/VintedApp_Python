@@ -14,6 +14,9 @@
         "color_ids": null,
         "material_ids": null
       }
+    },
+    "similar_items": {
+      "value": "/items/{id}/similar_items"
     }
   }
 }

@@ -1,5 +1,9 @@
 from utils import config_functions, cookies
 from api.items import search, similar_items
+import sys
+from pathlib import Path
+ROOT_DIR = Path(__file__).parent.parent.parent.parent.parent.__str__()
+sys.path.append(ROOT_DIR)
 
 class Vinted:
     def __init__(self):

@@ -1,4 +1,4 @@
-from utils import config_functions, cookies
+from src.app.utils import config_functions, cookies
 import requests
 from requests import Response
 
@@ -8,7 +8,10 @@ endpoints = config_functions.read_json("src/app/config/endpoints.json")
 BASE_URL = endpoints["BASE_URL"]
 endpoints = endpoints["endpoints"]
 
-def search(cookies, **kwargs):
+def search(cookies=[], **kwargs):
+    if len(cookies) == 0 or cookies == None:
+        raise Exception("Error: cookies were not given. ❌")
+            
     endpoint: str = endpoints["search"]["value"]
     params: list = endpoints["search"]["params"]
     
@@ -17,20 +20,20 @@ def search(cookies, **kwargs):
     for param in params:
         arg = None
         
-        if param in kwargs["kwargs"]:
-            arg = kwargs["kwargs"][param]
+        if param in kwargs:
+            arg = kwargs[param]
         
         if arg:
             url += f"{param}={arg}&"
-    
-    res = requests.get(url=url, headers=headers, cookies=cookies)
-    
+        
     try:
+        res = requests.get(url=url, headers=headers, cookies=cookies)
+
         data = res.json()
         
         return data
     except Exception as e:
-        print(f"Error: {e}")
+        raise Exception(e)
         
 def similar_items(cookies, item_id: str):
     endpoint: str = endpoints["similar_items"]["value"]

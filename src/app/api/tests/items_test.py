@@ -8,8 +8,6 @@ import unittest
 from unittest.mock import patch
 from requests import RequestException
 
-## TODO - create test class for similar items and create success function for both tests
-
 auth = cookies.load_auth_cookie()
 
 c = {
@@ -19,10 +17,9 @@ c = {
 class TestSearch(unittest.TestCase):
     def __init__(self, methodName: str = "runTest") -> None:
         super().__init__(methodName)
-        self.response = similar_items(cookies=c, item_id="4574942465")  
+        self.response = search(cookies=c, page=1, query='Jordan')
 
-    
-    def test_failure(self):        
+    def test_failure(self):   
         with self.assertRaises(Exception):
             search()
             
@@ -32,7 +29,7 @@ class TestSearch(unittest.TestCase):
 class TestSimilarItems(unittest.TestCase):
     def __init__(self, methodName: str = "runTest"):
         super().__init__(methodName)
-        self.response = similar_items(cookies=c, item_id="4574942465")  
+        self.response = similar_items(cookies=c, item_id="4551573809")  
 
     def test_failure(self):
         with self.assertRaises(Exception):
@@ -40,6 +37,3 @@ class TestSimilarItems(unittest.TestCase):
             
     def test_success(self):
         self.assertIsInstance(self.response, dict)                  
-    
-if __name__ == "__main__":
-    unittest.main()

@@ -1,3 +1,7 @@
+import sys
+from pathlib import Path
+ROOT_DIR = Path(__file__).parent.parent.parent.parent.__str__()
+sys.path.append(ROOT_DIR)
 from src.app.utils import config_functions, cookies
 import requests
 from requests import Response

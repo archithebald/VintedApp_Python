@@ -2,7 +2,7 @@ import sys
 from pathlib import Path
 ROOT_DIR = Path(__file__).parent.parent.parent.parent.__str__()
 sys.path.append(ROOT_DIR)
-from src.app.utils import config_functions, cookies
+from src.app.utils import config_functions
 import requests
 from requests import Response
 import json
@@ -12,8 +12,6 @@ headers = {"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/5
 endpoints = config_functions.read_json("src/app/config/endpoints.json")
 BASE_URL = endpoints["BASE_URL"]
 endpoints = endpoints["endpoints"]
-
-## TODO - check similar items if working
 
 def build_url(base_url: str, endpoint: str, params: list = [], **kwargs) -> str:
     url = f"{base_url}{endpoint}?"

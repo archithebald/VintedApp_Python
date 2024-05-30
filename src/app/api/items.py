@@ -9,6 +9,8 @@ endpoints = config_functions.read_json("src/app/config/endpoints.json")
 BASE_URL = endpoints["BASE_URL"]
 endpoints = endpoints["endpoints"]
 
+## TODO - check similar items if working
+
 def build_url(base_url: str, endpoint: str, params: list = [], **kwargs) -> str:
     url = f"{base_url}{endpoint}?"
     for param in params:
@@ -40,7 +42,11 @@ def search(cookies:list=[], **kwargs):
     except json.JSONDecodeError as e:
         raise Exception(f"Failed to parse JSON response: {e}")
         
-def similar_items(cookies, item_id: str):
+def similar_items(cookies:list=[], item_id: str=""):
+    check_cookies(cookies=cookies)
+    if item_id == "" or item_id == None:
+        raise Exception("Error: item id was not given. ❌")
+    
     endpoint: str = endpoints["similar_items"]["value"].replace("{id}", item_id)
     url: str = f"{BASE_URL}{endpoint}"
         

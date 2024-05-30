@@ -17,6 +17,12 @@
     },
     "similar_items": {
       "value": "/items/{id}/similar_items"
+    },
+    "user_info": {
+      "value": "/users/{user_id}?localize=true"
+    },
+    "shipping_details": {
+      "value": "/items/{id}/shipping_details"
     }
   }
 }

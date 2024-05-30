@@ -65,3 +65,4 @@ def similar_items(cookies:list=[], item_id: str=""):
         raise Exception(f"HTTP request failed: {e}")
     except json.JSONDecodeError as e:
         raise Exception(f"Failed to parse JSON response: {e}")
+

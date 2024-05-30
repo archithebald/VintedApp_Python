@@ -1,4 +1,4 @@
-# Vinted App in Python
+# Vinted App in Pytho
 
 ## Description
 

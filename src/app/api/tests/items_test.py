@@ -37,3 +37,6 @@ class TestSimilarItems(unittest.TestCase):
             
     def test_success(self):
         self.assertIsInstance(self.response, dict)                  
+        
+if __name__ == "__main__":
+    unittest.main()

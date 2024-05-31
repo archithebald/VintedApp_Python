@@ -8,11 +8,26 @@ import unittest
 class TestFilterBrand(unittest.TestCase):
     def __init__(self, methodName: str = "runTest") -> None:
         super().__init__(methodName)
-        self.response = filter_brand()
-
+        self.id_response = filter_brand(brand_id=6451)
+        self.name_response = filter_brand(name="internet")
+        self.luxury_response = filter_brand(is_luxury=True)
+        self.authenticity_response = filter_brand(authenticity_check_required=True)
+        
     def test_failure(self):   
         with self.assertRaises(Exception):
-            search()
+            filter_brand()
             
-    def test_success(self):
-        self.assertIsInstance(self.response, dict)                                    
+    def test_name_param_response_success(self):
+        self.assertIsInstance(self.name_response, list)   
+        
+    def test_luxury_param_response_success(self):
+        self.assertIsInstance(self.luxury_response, list)  
+        
+    def test_authenticity_param_response_success(self):
+        self.assertIsInstance(self.authenticity_response, list)  
+        
+    def test_id_param_response_success(self):
+        self.assertIsInstance(self.id_response, list)                                   
+        
+if __name__ == "__main__":
+    unittest.main()

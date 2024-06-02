@@ -1,22 +1,10 @@
-import sys
-from pathlib import Path
-ROOT_DIR = Path(__file__).parent.parent.parent.parent.__str__()
-sys.path.append(ROOT_DIR)
 from src.app.utils import config_functions
+from src.app.api import *
 
 try:
     brands_data: dict = config_functions.read_json("src/app/config/brands.json")
 except Exception as e:
     raise Exception(e)
-
-def check_params(**kwargs):
-    newArgs = {}
-    
-    for key, value in kwargs.items():
-        if value != None:
-            newArgs[key] = value
-            
-    return newArgs
 
 def filter_brand(brand_id:int = None, name:str = None, is_luxury:bool = None, authenticity_check_required:bool = None):
     filtered = []

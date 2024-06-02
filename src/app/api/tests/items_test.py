@@ -5,8 +5,6 @@ sys.path.append(ROOT_DIR)
 from src.app.utils import cookies
 from src.app.api.items import search, similar_items
 import unittest
-from unittest.mock import patch
-from requests import RequestException
 
 auth = cookies.load_auth_cookie()
 

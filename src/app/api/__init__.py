@@ -10,8 +10,8 @@ endpoints = config_functions.read_json("src/app/config/endpoints.json")
 BASE_URL = endpoints["BASE_URL"]
 endpoints = endpoints["endpoints"]
 
-def build_url(base_url: str, endpoint: str, params: list = [], **kwargs) -> str:
-    url = f"{base_url}{endpoint}?"
+def build_url(endpoint: str, params: list = [], **kwargs) -> str:
+    url = f"{BASE_URL}{endpoint}?"
     for param in params:
         if param in kwargs:
             url += f"{param}={kwargs[param]}&"

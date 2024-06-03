@@ -27,7 +27,7 @@ class TestSearch(unittest.TestCase):
 class TestSimilarItems(unittest.TestCase):
     def __init__(self, methodName: str = "runTest"):
         super().__init__(methodName)
-        self.response = similar_items(cookies=c, item_id="4551573809")  
+        self.response = similar_items(cookies=c, item_id="4595403907")  
 
     def test_failure(self):
         with self.assertRaises(Exception):

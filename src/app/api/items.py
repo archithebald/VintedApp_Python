@@ -9,7 +9,7 @@ def search(cookies:list=[], **kwargs):
     endpoint: str = endpoints["search"]["value"]
     params: list = endpoints["search"]["params"]
     
-    url: str = build_url(base_url=BASE_URL, endpoint=endpoint, params=params, **kwargs)
+    url: str = build_url(endpoint=endpoint, params=params, **kwargs)
         
     try:
         res: Response = requests.get(url=url, headers=headers, cookies=cookies)
@@ -29,7 +29,7 @@ def similar_items(cookies:list=[], item_id: str=""):
         raise Exception("Error: item id was not given. ❌")
     
     endpoint: str = endpoints["similar_items"]["value"].replace("{id}", item_id)
-    url: str = f"{BASE_URL}{endpoint}"
+    url: str = build_url(endpoint=endpoint)
         
     try:
         res: Response = requests.get(url=url, headers=headers, cookies=cookies)

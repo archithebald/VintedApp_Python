@@ -5,6 +5,7 @@ sys.path.append(ROOT_DIR)
 from src.app.utils import cookies
 from src.app.api.items import search, similar_items
 from src.app.api.brand import get_brands, filter_brand 
+from src.app.api.users import get_user_info
 
 class Vinted():
     def __init__(self):
@@ -26,3 +27,6 @@ class Vinted():
     
     def get_brand(self, brand_id:int=None, brand_name:str=None, is_luxury:bool=None, requires_authenticity_check:bool=None) -> list:
         return filter_brand(brand_id, brand_name, is_luxury, requires_authenticity_check)
+    
+    def get_user_info(self, user_id:str):
+        return get_user_info(self.cookies, user_id=user_id)

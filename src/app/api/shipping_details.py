@@ -11,7 +11,7 @@ def get_shipping_details(cookies:list=[], **kwargs):
     try:
         if item_id:
             endpoint = endpoints["shipping_details"]["value"].replace("{id}", item_id)    
-            url = f"{BASE_URL}{endpoint}"
+            url = build_url(endpoint=endpoint)
             
             res: Response = requests.get(url=url, headers=headers, cookies=cookies)
             res.raise_for_status()

@@ -6,7 +6,13 @@ This is a Vinted Api Wrapper which you can use in python for various projects in
 
 ## Installation
 
-1. Install dependencies : `pip install -r requirements.txt`
+1. Install package : `pip install vinted-api-python==0.0.1`
+
+## Example
+
+```
+from vinted-api-python import Vinted
+```
 
 ## Emoji Code for commits
 

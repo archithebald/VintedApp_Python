@@ -1,5 +1,5 @@
 from src.app.utils import cookies
-from src.app.api.items import search, similar_items
+from src.app.api.items import search, similar_items, get_item_details
 from src.app.api.brand import get_brands, filter_brand 
 from src.app.api.users import get_user_info, get_user_reviews
 from src.app.api.shipping_details import get_shipping_details 
@@ -28,7 +28,7 @@ class Vinted():
         return get_shipping_details(self.cookies, item_id=item_id)
     
     def get_item_details(self, item_id: str) -> list:
-        pass
+        return get_item_details(self.cookies, item_id=item_id)
         
     def get_user_reviews(self, user_id: str) -> list:
         return get_user_reviews(self.cookies, user_id=user_id)

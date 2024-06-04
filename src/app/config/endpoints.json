@@ -32,6 +32,9 @@
     },
     "shipping_details": {
       "value": "/items/{id}/shipping_details"
+    },
+    "item_details": {
+      "value": "/items/{id}"
     }
   }
 }

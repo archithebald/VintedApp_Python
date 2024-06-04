@@ -21,6 +21,15 @@
     "user_info": {
       "value": "/users/{user_id}?localize=true"
     },
+    "user_reviews": {
+      "value": "/user_feedbacks",
+      "params": {
+        "user_id": null,
+        "page": null,
+        "per_page": null,
+        "by": "all"
+      }
+    },
     "shipping_details": {
       "value": "/items/{id}/shipping_details"
     }

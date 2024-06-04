@@ -3,16 +3,15 @@ from requests import Response
 import json
 from src.app.api import *
 
-def get_user_info(cookies:list=[], **kwargs):
+def get_shipping_details(cookies:list=[], **kwargs):
     check_cookies(cookies=cookies)
-        
+    
+    item_id = kwargs.get("item_id")
+            
     try:
-        user_id = kwargs.get("user_id")
-    
-        endpoint: str = endpoints["user_info"]["value"].replace("{user_id}", user_id)
-    
-        if user_id:
-            url: str = build_url(endpoint=endpoint)
+        if item_id:
+            endpoint = endpoints["shipping_details"]["value"].replace("{id}", item_id)    
+            url = f"{BASE_URL}{endpoint}"
             
             res: Response = requests.get(url=url, headers=headers, cookies=cookies)
             res.raise_for_status()
@@ -21,7 +20,7 @@ def get_user_info(cookies:list=[], **kwargs):
             
             return data
         else:
-            raise Exception("No user id was given. ❌")
+            raise Exception("No item id was given. ❌")
     except requests.RequestException as e:
         raise Exception(f"HTTP request failed: {e}")
     except json.JSONDecodeError as e:

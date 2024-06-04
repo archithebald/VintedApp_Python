@@ -1,7 +1,3 @@
-import sys
-from pathlib import Path
-ROOT_DIR = Path(__file__).parent.parent.parent.parent.__str__()
-sys.path.append(ROOT_DIR)
 from src.app.utils import config_functions
 
 headers = {"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36 OPR/109.0.0.0"}

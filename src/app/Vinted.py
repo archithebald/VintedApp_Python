@@ -1,7 +1,3 @@
-import sys
-from pathlib import Path
-ROOT_DIR = Path(__file__).parent.parent.parent.__str__()
-sys.path.append(ROOT_DIR)
 from src.app.utils import cookies
 from src.app.api.items import search, similar_items
 from src.app.api.brand import get_brands, filter_brand 

@@ -1,8 +1,8 @@
-from src.app.utils import cookies
-from src.app.api.items import search, similar_items, get_item_details
-from src.app.api.brand import get_brands, filter_brand 
-from src.app.api.users import get_user_info, get_user_reviews
-from src.app.api.shipping_details import get_shipping_details 
+from pythed.app.utils import cookies
+from pythed.app.api.items import search, similar_items, get_item_details
+from pythed.app.api.brand import get_brands, filter_brand 
+from pythed.app.api.users import get_user_info, get_user_reviews
+from pythed.app.api.shipping_details import get_shipping_details 
 
 class Vinted():
     def __init__(self):

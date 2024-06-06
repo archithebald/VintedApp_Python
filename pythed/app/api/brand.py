@@ -1,5 +1,5 @@
-from src.app.utils import config_functions
-from src.app.api import *
+from pythed.app.utils import config_functions
+from pythed.app.api import *
 
 try:
     brands_data: dict = config_functions.read_json("src/app/config/brands.json")

@@ -1,4 +1,4 @@
-from src.app import Vinted
+from pythed.app import Vinted
 
 app = Vinted.Vinted()
 

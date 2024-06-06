@@ -1,7 +1,7 @@
 import requests
 from requests import Response
 import json
-from src.app.api import *
+from pythed.app.api import *
 
 def get_user_info(cookies:list=[], **kwargs):
     check_cookies(cookies=cookies)

@@ -1,3 +1,4 @@
 vinted_api_python.egg-info
-setup.py
 .env
+dist
+pythed.egg-info

@@ -24,10 +24,18 @@ def filter_brand(brand_id:int = None, name:str = None, is_luxury:bool = None, au
         if authenticity_check_required and brand["requires_authenticity_check"] == authenticity_check_required:
             filtered.append(brand)
         
-    return filtered
+    return filtered[0]
 
 def get_brands():
     try:
         return brands_data
     except Exception as e:
         raise Exception(e)
+    
+def get_multiple_brands(names: list = []):
+    brands = []
+    
+    for brand in names:
+        brands.append(filter_brand(name=brand))
+        
+    return brands

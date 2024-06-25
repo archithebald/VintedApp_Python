@@ -7,6 +7,8 @@
         "page": null,
         "per_page": null,
         "search_text": null,
+        "price_from": null,
+        "price_to": null,
         "catalog_ids": null,
         "size_ids": null,
         "brand_ids": null,

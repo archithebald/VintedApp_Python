@@ -1,1 +1,8 @@
-- [] Create method "get_multiple_brands"
+V 0.0.4 NEW FEATURES
+
+- [✅] Create method "get_multiple_brands"
+- [✅] Add price range for searching
+- [] Create method "get_all_status" 
+- [] Create method "get_status"
+- [] Create method "get_all_sizes"
+- [] Create method "get_size"

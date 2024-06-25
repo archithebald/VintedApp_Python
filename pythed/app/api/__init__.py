@@ -9,9 +9,15 @@ endpoints = endpoints["endpoints"]
 def build_url(endpoint: str, params: list = [], **kwargs) -> str:
     url = f"{BASE_URL}{endpoint}?"
     for param in params:
-        if param in kwargs:
-            url += f"{param}={kwargs[param]}&"
-    return url.rstrip('&')
+        if param in kwargs and kwargs[param] is not None:
+            if isinstance(kwargs[param], list):
+                value = ','.join(map(str, kwargs[param]))
+            else:
+                value = kwargs[param]
+            url += f"{param}={value}&"
+    if url.endswith('&'):
+        url = url[:-1]
+    return url
 
 def check_cookies(cookies:list=[]):
     if len(cookies) == 0 or cookies == None:

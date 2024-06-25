@@ -5,7 +5,7 @@
       "value": "/catalog/items",
       "params": {
         "page": null,
-        "perPage": null,
+        "per_page": null,
         "search_text": null,
         "catalog_ids": null,
         "size_ids": null,

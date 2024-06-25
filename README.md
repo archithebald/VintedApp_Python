@@ -6,7 +6,7 @@ This is a Vinted Api Wrapper which you can use in python for various projects in
 
 ## Installation
 
-1. Install package : `pip install pythed==0.0.1`
+1. Install package : `pip install pythed`
 
 ## Example
 

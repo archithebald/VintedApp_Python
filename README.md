@@ -12,6 +12,12 @@ This is a Vinted Api Wrapper which you can use in python for various projects in
 
 ```
 from pythed.app import Vinted
+
+app = Vinted.Vinted()
+
+items = app.search_items(search_text="jordan")
+
+print(items)
 ```
 
 ## Emoji Code for commits

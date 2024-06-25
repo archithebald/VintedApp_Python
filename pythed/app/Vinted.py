@@ -113,7 +113,11 @@ class Vinted:
         return get_user_reviews(self.cookies, user_id=user_id)
 
     def get_all_status(self) -> list:
+        """Returns all elements used to qualify the condition in which an item is"""
+        
         return get_all_status()
     
     def get_all_sizes(self) -> list:
+        """Returns all sizes"""
+
         return get_all_sizes()

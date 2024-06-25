@@ -3,6 +3,8 @@ from pythed.app.api.items import search, similar_items, get_item_details
 from pythed.app.api.brand import get_brands, filter_brand, get_multiple_brands
 from pythed.app.api.users import get_user_info, get_user_reviews
 from pythed.app.api.shipping_details import get_shipping_details 
+from pythed.app.api.sizes import get_all_sizes
+from pythed.app.api.status import get_all_status
 
 class Vinted:
     def __init__(self):
@@ -109,3 +111,9 @@ class Vinted:
         :return: A list of user reviews.
         """
         return get_user_reviews(self.cookies, user_id=user_id)
+
+    def get_all_status(self) -> list:
+        return get_all_status()
+    
+    def get_all_sizes(self) -> list:
+        return get_all_sizes()

@@ -2,3 +2,5 @@ vinted_api_python.egg-info
 .env
 dist
 pythed.egg-info
+build
+.pypirc

@@ -2,7 +2,7 @@ from pythed.app.utils import config_functions
 from pythed.app.api import *
 
 try:
-    brands_data: dict = config_functions.read_json("src/app/config/brands.json")
+    brands_data: dict = config_functions.read_json("../config/brands.json")
 except Exception as e:
     raise Exception(e)
 

@@ -11,9 +11,9 @@ This is a Vinted Api Wrapper which you can use in python for various projects in
 ## Example
 
 ```
-from pythed.app import Vinted
+from pythed.app.Vinted import Vinted
 
-app = Vinted.Vinted()
+app = Vinted()
 
 brands = app.get_brands(brand_names=["Jordan", "Nike"])
 brand1 = brands[0]["id"]

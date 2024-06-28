@@ -14,7 +14,8 @@
         "brand_ids": null,
         "status_ids": null,
         "color_ids": null,
-        "material_ids": null
+        "material_ids": null,
+        "order": null
       }
     },
     "similar_items": {

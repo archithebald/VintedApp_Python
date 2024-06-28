@@ -12,7 +12,7 @@ class Vinted:
         self.auth_cookie = cookies.load_auth_cookie()  # [0] - Cookie name ||| [1] - Cookie value
         self.cookies = {self.auth_cookie[0]: self.auth_cookie[1]}
         
-    def search_items(self, page: int = 1, perPage: int = 20, search_text: str = None, size_ids: list = None, brand_ids: list = None, status_ids: list = None, price_from: str = None, price_to: str = None) -> list:
+    def search_items(self, page: int = 1, perPage: int = 20, search_text: str = None, size_ids: list = None, brand_ids: list = None, status_ids: list = None, price_from: str = None, price_to: str = None, order: str = None) -> list:
         """
         Search items based on various parameters.
         
@@ -24,6 +24,7 @@ class Vinted:
         :param status_ids: A list of status IDs to filter the search.
         :param price_from: Minimum price to filter the search.
         :param price_to: Maximum price to filter the search.
+        :param order: Filter order (newest_first, price_low_to_high, price_high_to_low, relevance)
         :return: A list of search results.
         """
         kwargs = {
@@ -34,7 +35,8 @@ class Vinted:
             "brand_ids": brand_ids,
             "status_ids": status_ids,
             "price_from": price_from,
-            "price_to": price_to
+            "price_to": price_to,
+            "order": order
         }
         return search(self.cookies, **kwargs)
     
